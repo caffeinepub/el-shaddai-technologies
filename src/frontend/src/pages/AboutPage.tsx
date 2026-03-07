@@ -77,7 +77,7 @@ export default function AboutPage() {
               Our Story
             </span>
             <h1 className="font-display text-4xl lg:text-6xl font-bold mb-6 max-w-2xl">
-              About El-Shaddai Technologies
+              About EL-Shaddai Technologies Inc
             </h1>
             <p className="text-white/80 max-w-xl text-lg leading-relaxed">
               Founded on faith, driven by excellence. We are a premier IT
@@ -204,12 +204,12 @@ export default function AboutPage() {
                       Founder & CEO
                     </p>
                     <p className="text-white/60 text-xs mt-1">
-                      EL-Shaddai Technologies
+                      EL-Shaddai Technologies Inc
                     </p>
                   </div>
                   <div className="md:col-span-3 p-8 lg:p-10 flex flex-col justify-center">
                     <p className="text-muted-foreground leading-relaxed mb-4">
-                      Shanthi Chittala founded El-Shaddai Technologies Inc with
+                      Shanthi Chittala founded EL-Shaddai Technologies Inc with
                       a clear vision: to create a staffing firm that genuinely
                       cares about both clients and candidates. With extensive
                       experience in IT workforce solutions, she built the
@@ -217,8 +217,8 @@ export default function AboutPage() {
                       excellence.
                     </p>
                     <p className="text-muted-foreground leading-relaxed mb-6">
-                      Under her leadership, El-Shaddai Technologies has grown
-                      into a respected name in IT staffing, known for its
+                      Under her leadership, EL-Shaddai Technologies Inc has
+                      grown into a respected name in IT staffing, known for its
                       rigorous vetting process and deep industry relationships.
                     </p>
                     <div className="space-y-2 text-sm">

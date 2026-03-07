@@ -65,7 +65,7 @@ export default function HomePage() {
       >
         <img
           src="/assets/uploads/image-4-2.png"
-          alt="El-Shaddai Technologies – Building High-Performance IT Talent Pipelines"
+          alt="EL-Shaddai Technologies – Building High-Performance IT Talent Pipelines"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
         {/* Gradient overlay for CTAs area */}
@@ -84,7 +84,7 @@ export default function HomePage() {
               Building High-Performance IT Talent Pipelines
             </h1>
             <p className="text-white/85 text-lg mb-8 leading-relaxed">
-              El-Shaddai Technologies connects America's top businesses with
+              EL-Shaddai Technologies Inc connects America's top businesses with
               exceptional technology professionals — fast, reliably, and with
               care.
             </p>
@@ -279,7 +279,7 @@ export default function HomePage() {
                 Your Strategic Talent Partner
               </h2>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                El-Shaddai Technologies Inc has built a reputation for
+                EL-Shaddai Technologies Inc has built a reputation for
                 delivering exceptional IT talent solutions with speed,
                 precision, and care. We understand your business challenges and
                 deliver results.
@@ -362,8 +362,8 @@ export default function HomePage() {
               Ready to Build Your Dream IT Team?
             </h2>
             <p className="text-white/80 mb-8 max-w-xl mx-auto">
-              Let's discuss how El-Shaddai Technologies can help you find the
-              right talent at the right time.
+              Let's discuss how EL-Shaddai Technologies Inc can help you find
+              the right talent at the right time.
             </p>
             <Link to="/contact" data-ocid="home.cta.contact.button">
               <Button

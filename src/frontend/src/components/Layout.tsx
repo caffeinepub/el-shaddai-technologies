@@ -53,9 +53,17 @@ export default function Layout() {
             >
               <img
                 src="/assets/uploads/image-3-1.png"
-                alt="El-Shaddai Technologies Logo"
+                alt="EL-Shaddai Technologies Logo"
                 className="h-10 w-auto object-contain"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = "none";
+                }}
               />
+              <span className="font-display font-bold text-brand-navy text-base lg:text-lg leading-tight">
+                EL-Shaddai
+                <br className="hidden sm:block" />{" "}
+                <span className="text-brand-red">Technologies Inc</span>
+              </span>
             </Link>
 
             {/* Desktop Nav */}
@@ -155,9 +163,17 @@ export default function Layout() {
               <div className="flex items-center gap-3 mb-4">
                 <img
                   src="/assets/uploads/image-3-1.png"
-                  alt="El-Shaddai Technologies Logo"
+                  alt="EL-Shaddai Technologies Logo"
                   className="h-12 w-auto object-contain"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = "none";
+                  }}
                 />
+                <span className="font-display font-bold text-white text-lg leading-tight">
+                  EL-Shaddai
+                  <br />
+                  <span className="text-brand-gold">Technologies Inc</span>
+                </span>
               </div>
               <p className="text-white/70 text-sm leading-relaxed max-w-sm">
                 Building high-performance IT talent pipelines. Your trusted

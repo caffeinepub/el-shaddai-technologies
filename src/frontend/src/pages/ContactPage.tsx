@@ -116,7 +116,7 @@ export default function ContactPage() {
                         Founder & CEO
                       </p>
                       <p className="text-white/60 text-xs">
-                        EL-Shaddai Technologies
+                        EL-Shaddai Technologies Inc
                       </p>
                     </div>
                   </div>

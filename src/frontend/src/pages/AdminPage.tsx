@@ -1097,7 +1097,9 @@ export default function AdminPage() {
             />
             <div>
               <p className="font-display font-bold text-sm">Admin Portal</p>
-              <p className="text-white/60 text-xs">EL-Shaddai Technologies</p>
+              <p className="text-white/60 text-xs">
+                EL-Shaddai Technologies Inc
+              </p>
             </div>
           </div>
           <div className="flex items-center gap-3">

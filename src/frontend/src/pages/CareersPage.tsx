@@ -92,7 +92,7 @@ export default function CareersPage() {
       >
         <img
           src="/assets/uploads/tumisu-hiring-3580378_1920-4.png"
-          alt="Careers at El-Shaddai Technologies"
+          alt="Careers at EL-Shaddai Technologies Inc"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/85 via-brand-navy/60 to-brand-navy/20" />
@@ -130,13 +130,13 @@ export default function CareersPage() {
               transition={{ duration: 0.6 }}
             >
               <span className="inline-block text-xs font-display font-semibold uppercase tracking-widest text-brand-red mb-3">
-                Why El-Shaddai
+                Why EL-Shaddai
               </span>
               <h2 className="font-display text-3xl lg:text-5xl font-bold text-brand-navy mb-6">
                 Why Work With Us?
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                At El-Shaddai Technologies, we believe our people are our
+                At EL-Shaddai Technologies Inc, we believe our people are our
                 greatest asset. We invest in your growth, celebrate your wins,
                 and create an environment where exceptional work thrives.
               </p>
@@ -211,7 +211,7 @@ export default function CareersPage() {
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
               Explore our open roles and find your next career move with
-              El-Shaddai Technologies.
+              EL-Shaddai Technologies Inc.
             </p>
           </motion.div>
 
