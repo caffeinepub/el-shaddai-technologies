@@ -39,7 +39,6 @@ const services = [
 ];
 
 const stats = [
-  { value: "500+", label: "Placements Made" },
   { value: "98%", label: "Client Satisfaction" },
   { value: "15+", label: "Industries Served" },
   { value: "24/7", label: "Dedicated Support" },
@@ -64,7 +63,7 @@ export default function HomePage() {
         data-ocid="home.hero.section"
       >
         <img
-          src="/assets/uploads/image-4-2.png"
+          src="/assets/uploads/image-6-2.png"
           alt="EL-Shaddai Technologies – Building High-Performance IT Talent Pipelines"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
