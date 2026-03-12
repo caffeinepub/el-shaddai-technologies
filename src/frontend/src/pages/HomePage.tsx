@@ -10,6 +10,11 @@ import {
   Users,
 } from "lucide-react";
 import { type Variants, motion } from "motion/react";
+import teamPhoto from "/assets/uploads/089photoshootings-people-1979261_1920-5.jpg";
+import techPhoto from "/assets/uploads/ChatGPT-Image-Mar-6-2026-02_50_25-PM-6.png";
+import heroBg from "/assets/uploads/image-6-2.png";
+import expertPhoto from "/assets/uploads/tumisu-expert-5442081_1920-3.jpg";
+import hiringBanner from "/assets/uploads/tumisu-hiring-3580378_1920-4.png";
 
 const services = [
   {
@@ -63,11 +68,10 @@ export default function HomePage() {
         data-ocid="home.hero.section"
       >
         <img
-          src="/assets/uploads/image-6-2.png"
+          src={heroBg}
           alt="EL-Shaddai Technologies – Building High-Performance IT Talent Pipelines"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        {/* Gradient overlay for CTAs area */}
         <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/30 to-transparent" />
         <div className="relative z-10 w-full container max-w-7xl mx-auto px-4 sm:px-6 pb-16 lg:pb-24">
           <motion.div
@@ -233,7 +237,7 @@ export default function HomePage() {
       {/* ── Hiring Banner ────────────────────────────────────────────────── */}
       <div className="relative w-full overflow-hidden h-56 lg:h-72">
         <img
-          src="/assets/uploads/tumisu-hiring-3580378_1920-4.png"
+          src={hiringBanner}
           alt="We are hiring"
           className="w-full h-full object-cover object-center"
         />
@@ -326,17 +330,17 @@ export default function HomePage() {
             >
               <div className="absolute -inset-4 bg-brand-red/5 rounded-2xl -z-10" />
               <img
-                src="/assets/uploads/089photoshootings-people-1979261_1920-5.jpg"
+                src={teamPhoto}
                 alt="Business team meeting"
                 className="w-full h-80 lg:h-96 object-cover rounded-xl shadow-navy col-span-2"
               />
               <img
-                src="/assets/uploads/tumisu-expert-5442081_1920-3.jpg"
+                src={expertPhoto}
                 alt="IT expert at work"
                 className="w-full h-36 object-cover rounded-xl shadow-card"
               />
               <img
-                src="/assets/uploads/ChatGPT-Image-Mar-6-2026-02_50_25-PM-6.png"
+                src={techPhoto}
                 alt="Technology professionals"
                 className="w-full h-36 object-cover rounded-xl shadow-card"
               />

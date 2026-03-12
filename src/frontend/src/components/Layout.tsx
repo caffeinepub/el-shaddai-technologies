@@ -3,6 +3,7 @@ import { Link, Outlet, useRouterState } from "@tanstack/react-router";
 import { ChevronRight, Mail, Menu, Phone, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
+import logoImg from "/assets/uploads/image-5-1.png";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -52,12 +53,9 @@ export default function Layout() {
               data-ocid="nav.logo.link"
             >
               <img
-                src="/assets/uploads/image-5-1.png"
+                src={logoImg}
                 alt="EL-Shaddai Technologies Logo"
                 className="h-10 w-auto object-contain"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).style.display = "none";
-                }}
               />
               <span className="font-display font-bold text-brand-navy text-base lg:text-lg leading-tight">
                 EL-Shaddai
@@ -162,12 +160,9 @@ export default function Layout() {
             <div className="lg:col-span-2">
               <div className="flex items-center gap-3 mb-4">
                 <img
-                  src="/assets/uploads/image-5-1.png"
+                  src={logoImg}
                   alt="EL-Shaddai Technologies Logo"
                   className="h-12 w-auto object-contain"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = "none";
-                  }}
                 />
                 <span className="font-display font-bold text-white text-lg leading-tight">
                   EL-Shaddai
@@ -250,14 +245,6 @@ export default function Layout() {
               © {new Date().getFullYear()} EL-Shaddai Technologies Inc. All
               rights reserved.
             </p>
-            <a
-              href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(window.location.hostname)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-white/40 hover:text-white/70 transition-colors"
-            >
-              Built with ♥ using caffeine.ai
-            </a>
           </div>
         </div>
       </footer>
