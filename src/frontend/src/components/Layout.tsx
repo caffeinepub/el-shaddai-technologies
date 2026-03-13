@@ -3,7 +3,6 @@ import { Link, Outlet, useRouterState } from "@tanstack/react-router";
 import { ChevronRight, Mail, Menu, Phone, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
-import logoImg from "/assets/uploads/image-5-1.png";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -53,7 +52,7 @@ export default function Layout() {
               data-ocid="nav.logo.link"
             >
               <img
-                src={logoImg}
+                src="/assets/uploads/image-5-1.png"
                 alt="EL-Shaddai Technologies Logo"
                 className="h-10 w-auto object-contain"
               />
@@ -160,7 +159,7 @@ export default function Layout() {
             <div className="lg:col-span-2">
               <div className="flex items-center gap-3 mb-4">
                 <img
-                  src={logoImg}
+                  src="/assets/uploads/image-5-1.png"
                   alt="EL-Shaddai Technologies Logo"
                   className="h-12 w-auto object-contain"
                 />

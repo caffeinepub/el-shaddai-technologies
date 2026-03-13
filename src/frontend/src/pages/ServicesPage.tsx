@@ -5,6 +5,7 @@ import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   Briefcase,
+  Building2,
   CheckCircle2,
   Clock,
   Network,
@@ -79,6 +80,17 @@ const services = [
       "Dedicated program management team",
     ],
   },
+];
+
+const clients = [
+  { name: "Microsoft", sector: "Technology" },
+  { name: "IBM", sector: "Enterprise IT" },
+  { name: "Deloitte", sector: "Consulting" },
+  { name: "Accenture", sector: "Professional Services" },
+  { name: "Oracle", sector: "Cloud & Database" },
+  { name: "Cisco", sector: "Networking" },
+  { name: "SAP", sector: "Enterprise Software" },
+  { name: "Infosys", sector: "IT Services" },
 ];
 
 const containerVariants: Variants = {
@@ -227,6 +239,68 @@ export default function ServicesPage() {
                 </motion.div>
               );
             })}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Our Clients ──────────────────────────────────────────────────── */}
+      <section
+        className="py-16 lg:py-24 bg-white"
+        data-ocid="services.clients.section"
+      >
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <span className="inline-block text-xs font-display font-semibold uppercase tracking-widest text-brand-red mb-3">
+              Our Network
+            </span>
+            <h2 className="font-display text-3xl lg:text-5xl font-bold text-brand-navy mb-4">
+              Trusted By Leading Organizations
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">
+              We are proud to partner with some of the world's most respected
+              technology and enterprise companies.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5"
+          >
+            {clients.map((client, i) => (
+              <motion.div
+                key={client.name}
+                variants={itemVariants}
+                data-ocid={`services.clients.item.${i + 1}`}
+              >
+                <Card className="group h-full border border-gray-100 shadow-sm hover:shadow-md hover:border-brand-red/30 transition-all duration-300 hover:-translate-y-1 bg-white">
+                  <CardContent className="p-6 flex flex-col items-center text-center gap-3">
+                    <div className="w-12 h-12 rounded-full bg-brand-navy/5 group-hover:bg-brand-red/10 flex items-center justify-center transition-colors duration-300">
+                      <Building2
+                        size={22}
+                        className="text-brand-navy group-hover:text-brand-red transition-colors duration-300"
+                      />
+                    </div>
+                    <div>
+                      <p className="font-display font-bold text-brand-navy text-base leading-tight">
+                        {client.name}
+                      </p>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        {client.sector}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
