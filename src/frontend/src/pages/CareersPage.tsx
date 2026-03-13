@@ -15,6 +15,7 @@ import {
   Users,
 } from "lucide-react";
 import { type Variants, motion } from "motion/react";
+import weAreHiringBanner from "/assets/generated/we-are-hiring-banner.dim_1200x500.jpg";
 import { JobType, useActiveJobListings } from "../hooks/useQueries";
 
 const perks = [
@@ -112,6 +113,55 @@ export default function CareersPage() {
               Join a team of passionate talent professionals making a real
               difference in people's careers and companies' success.
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── We Are Hiring Banner ──────────────────────────────────────────── */}
+      <section
+        className="py-12 lg:py-16 bg-brand-light"
+        data-ocid="careers.hiring.section"
+      >
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="text-center mb-8"
+          >
+            <span className="inline-block text-xs font-display font-semibold uppercase tracking-widest text-brand-red mb-3">
+              Opportunities Await
+            </span>
+            <h2 className="font-display text-3xl lg:text-5xl font-bold text-brand-navy">
+              We Are Hiring!
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.97 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="relative overflow-hidden rounded-2xl shadow-[0_8px_40px_rgba(0,28,77,0.18)]"
+          >
+            <img
+              src={weAreHiringBanner}
+              alt="We Are Hiring at EL-Shaddai Technologies Inc"
+              className="w-full object-cover"
+              style={{ maxHeight: "500px" }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <p className="text-white font-display font-semibold text-xl drop-shadow">
+                Join EL-Shaddai Technologies Inc — where your career takes off.
+              </p>
+              <Link to="/contact" data-ocid="careers.hiring.apply.button">
+                <Button className="bg-brand-gold hover:bg-brand-gold/90 text-brand-navy font-display font-bold shadow-lg whitespace-nowrap">
+                  Apply Today <ArrowRight size={16} className="ml-1" />
+                </Button>
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>

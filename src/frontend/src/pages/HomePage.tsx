@@ -64,16 +64,20 @@ export default function HomePage() {
     <div>
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
       <section
-        className="relative min-h-[85vh] flex items-end"
+        className="relative min-h-[85vh] flex items-center"
         data-ocid="home.hero.section"
       >
         <img
           src={heroBg}
-          alt="EL-Shaddai Technologies – Building High-Performance IT Talent Pipelines"
+          alt="EL-Shaddai Technologies hero background"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/30 to-transparent" />
-        <div className="relative z-10 w-full container max-w-7xl mx-auto px-4 sm:px-6 pb-16 lg:pb-24">
+        {/* Single strong solid overlay — fully suppresses any baked-in image text */}
+        <div
+          className="absolute inset-0"
+          style={{ backgroundColor: "rgba(2,14,38,0.88)" }}
+        />
+        <div className="relative z-10 w-full container max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-24">
           <motion.div
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
@@ -83,7 +87,7 @@ export default function HomePage() {
             <span className="inline-block text-xs font-display font-semibold uppercase tracking-widest text-brand-gold mb-4">
               Premier IT Staffing &amp; Workforce Solutions
             </span>
-            <h1 className="font-display text-4xl lg:text-6xl font-bold text-white mb-4 leading-tight drop-shadow-lg">
+            <h1 className="font-display text-4xl lg:text-6xl font-bold text-white mb-4 leading-tight">
               Building High-Performance IT Talent Pipelines
             </h1>
             <p className="text-white/85 text-lg mb-8 leading-relaxed">
@@ -146,7 +150,7 @@ export default function HomePage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-3 gap-6"
           >
             {stats.map((stat) => (
               <motion.div
@@ -235,33 +239,31 @@ export default function HomePage() {
       </section>
 
       {/* ── Hiring Banner ────────────────────────────────────────────────── */}
+      {/* Image already has "HIRING" text baked in — only show the CTA button */}
       <div className="relative w-full overflow-hidden h-56 lg:h-72">
         <img
           src={hiringBanner}
           alt="We are hiring"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/80 to-transparent flex items-center">
-          <div className="container max-w-7xl mx-auto px-4 sm:px-6">
-            <motion.div
-              initial={{ opacity: 0, x: -24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <p className="text-white font-display text-2xl lg:text-4xl font-bold max-w-md drop-shadow mb-4">
-                We're Hiring — Join Our Team
-              </p>
-              <Link to="/careers" data-ocid="home.hiring.careers.button">
-                <Button
-                  size="lg"
-                  className="bg-brand-red hover:bg-brand-red/90 text-white font-display font-semibold gap-2"
-                >
-                  View Open Positions <ArrowRight size={16} />
-                </Button>
-              </Link>
-            </motion.div>
-          </div>
+        {/* Subtle dark scrim at the bottom so the button is legible */}
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/70 via-transparent to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 flex items-end justify-center pb-8">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <Link to="/careers" data-ocid="home.hiring.careers.button">
+              <Button
+                size="lg"
+                className="bg-brand-red hover:bg-brand-red/90 text-white font-display font-semibold gap-2 shadow-lg"
+              >
+                View Open Positions <ArrowRight size={16} />
+              </Button>
+            </Link>
+          </motion.div>
         </div>
       </div>
 
