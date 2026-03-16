@@ -11,12 +11,6 @@ import {
 } from "lucide-react";
 import { type Variants, motion } from "motion/react";
 
-import teamMeetingImg from "/assets/uploads/089photoshootings-people-1979261_1920-5.jpg";
-import techProsImg from "/assets/uploads/ChatGPT-Image-Mar-6-2026-02_50_25-PM-6.png";
-import heroImg from "/assets/uploads/image-6-2.png";
-import itExpertImg from "/assets/uploads/tumisu-expert-5442081_1920-3.jpg";
-import hiringBannerImg from "/assets/uploads/tumisu-hiring-3580378_1920-4.png";
-
 const services = [
   {
     icon: Users,
@@ -63,13 +57,13 @@ const itemVariants: Variants = {
 export default function HomePage() {
   return (
     <div>
-      {/* ── Hero ──────────────────────────────────────────────────────────── */}
+      {/* ── Hero ────────────────────────────────────────────────────────────────── */}
       <section
         className="relative min-h-[85vh] flex items-center"
         data-ocid="home.hero.section"
       >
         <img
-          src={heroImg}
+          src="/assets/uploads/image-6-2.png"
           alt="EL-Shaddai Technologies hero background"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
@@ -119,7 +113,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Intro Strip ─────────────────────────────────────────────────── */}
+      {/* ── Intro Strip ─────────────────────────────────────────────────────────────── */}
       <section
         className="bg-brand-red text-white py-12 lg:py-16"
         data-ocid="home.intro.section"
@@ -143,7 +137,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Stats ────────────────────────────────────────────────────────── */}
+      {/* ── Stats ────────────────────────────────────────────────────────────────── */}
       <section className="py-12 bg-brand-navy text-white">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
@@ -169,7 +163,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Services Highlights ──────────────────────────────────────────── */}
+      {/* ── Services Highlights ──────────────────────────────────────────────────────────────── */}
       <section
         className="py-16 lg:py-24 bg-brand-light"
         data-ocid="home.services.section"
@@ -239,10 +233,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Hiring Banner ────────────────────────────────────────────────── */}
+      {/* ── Hiring Banner ──────────────────────────────────────────────────────────────── */}
       <div className="relative w-full overflow-hidden h-56 lg:h-72">
         <img
-          src={hiringBannerImg}
+          src="/assets/uploads/tumisu-hiring-3580378_1920-4.png"
           alt="We are hiring"
           className="w-full h-full object-cover object-center"
         />
@@ -266,7 +260,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* ── Why Choose Us ────────────────────────────────────────────────── */}
+      {/* ── Why Choose Us ──────────────────────────────────────────────────────────────── */}
       <section className="py-16 lg:py-24 bg-white" data-ocid="home.why.section">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -331,17 +325,17 @@ export default function HomePage() {
             >
               <div className="absolute -inset-4 bg-brand-red/5 rounded-2xl -z-10" />
               <img
-                src={teamMeetingImg}
+                src="/assets/uploads/089photoshootings-people-1979261_1920-5.jpg"
                 alt="Business team meeting"
                 className="w-full h-80 lg:h-96 object-cover rounded-xl shadow-navy col-span-2"
               />
               <img
-                src={itExpertImg}
+                src="/assets/uploads/tumisu-expert-5442081_1920-3.jpg"
                 alt="IT expert at work"
                 className="w-full h-36 object-cover rounded-xl shadow-card"
               />
               <img
-                src={techProsImg}
+                src="/assets/uploads/ChatGPT-Image-Mar-6-2026-02_50_25-PM-6.png"
                 alt="Technology professionals"
                 className="w-full h-36 object-cover rounded-xl shadow-card"
               />
@@ -350,7 +344,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── CTA Banner ──────────────────────────────────────────────────── */}
+      {/* ── CTA Banner ────────────────────────────────────────────────────────────────── */}
       <section
         className="py-16 bg-gradient-to-r from-brand-navy to-brand-navy/80 text-white"
         data-ocid="home.cta.section"

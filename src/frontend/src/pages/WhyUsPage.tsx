@@ -2,9 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 import { Award, BadgeCheck, Briefcase, MapPin, Users, Zap } from "lucide-react";
 import { motion } from "motion/react";
-import teamMeetingImg from "/assets/uploads/089photoshootings-people-1979261_1920-5.jpg";
-import techProsImg from "/assets/uploads/ChatGPT-Image-Mar-6-2026-02_50_25-PM-6.png";
-import itExpertImg from "/assets/uploads/tumisu-expert-5442081_1920-3.jpg";
 
 const reasons = [
   {
@@ -57,7 +54,7 @@ const fadeUp = {
 export default function WhyUsPage() {
   return (
     <div className="bg-background">
-      {/* ── Hero ──────────────────────────────────────────────────── */}
+      {/* ── Hero ──────────────────────────────────────────────────────────── */}
       <section className="relative bg-brand-navy overflow-hidden py-20 lg:py-28">
         <div
           className="absolute inset-0 opacity-10"
@@ -97,7 +94,7 @@ export default function WhyUsPage() {
         </div>
       </section>
 
-      {/* ── Photo Gallery ──────────────────────────────────────── */}
+      {/* ── Photo Gallery ──────────────────────────────────────────────── */}
       <section className="py-16 lg:py-20 bg-white">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
@@ -119,17 +116,17 @@ export default function WhyUsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                src: teamMeetingImg,
+                src: "/assets/uploads/089photoshootings-people-1979261_1920-5.jpg",
                 alt: "EL-Shaddai team collaborating in a business meeting",
                 caption: "Collaborative Team Culture",
               },
               {
-                src: itExpertImg,
+                src: "/assets/uploads/tumisu-expert-5442081_1920-3.jpg",
                 alt: "IT expert at work",
                 caption: "Expert Talent Network",
               },
               {
-                src: techProsImg,
+                src: "/assets/uploads/ChatGPT-Image-Mar-6-2026-02_50_25-PM-6.png",
                 alt: "Technology professionals",
                 caption: "Technology Professionals",
               },
@@ -160,7 +157,7 @@ export default function WhyUsPage() {
         </div>
       </section>
 
-      {/* ── Reasons Grid ──────────────────────────────────────── */}
+      {/* ── Reasons Grid ──────────────────────────────────────────────── */}
       <section className="py-16 lg:py-24 bg-muted/30">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
@@ -206,7 +203,7 @@ export default function WhyUsPage() {
         </div>
       </section>
 
-      {/* ── CTA ───────────────────────────────────────────────── */}
+      {/* ── CTA ───────────────────────────────────────────────────────── */}
       <section className="py-16 lg:py-24 bg-brand-navy">
         <div className="container max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <motion.div
