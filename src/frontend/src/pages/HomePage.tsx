@@ -11,6 +11,12 @@ import {
 } from "lucide-react";
 import { type Variants, motion } from "motion/react";
 
+import teamMeetingImg from "/assets/uploads/089photoshootings-people-1979261_1920-5.jpg";
+import techProsImg from "/assets/uploads/ChatGPT-Image-Mar-6-2026-02_50_25-PM-6.png";
+import heroImg from "/assets/uploads/image-6-2.png";
+import itExpertImg from "/assets/uploads/tumisu-expert-5442081_1920-3.jpg";
+import hiringBannerImg from "/assets/uploads/tumisu-hiring-3580378_1920-4.png";
+
 const services = [
   {
     icon: Users,
@@ -63,7 +69,7 @@ export default function HomePage() {
         data-ocid="home.hero.section"
       >
         <img
-          src="/assets/uploads/image-6-2.png"
+          src={heroImg}
           alt="EL-Shaddai Technologies hero background"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
@@ -234,14 +240,12 @@ export default function HomePage() {
       </section>
 
       {/* ── Hiring Banner ────────────────────────────────────────────────── */}
-      {/* Image already has "HIRING" text baked in — only show the CTA button */}
       <div className="relative w-full overflow-hidden h-56 lg:h-72">
         <img
-          src="/assets/uploads/tumisu-hiring-3580378_1920-4.png"
+          src={hiringBannerImg}
           alt="We are hiring"
           className="w-full h-full object-cover object-center"
         />
-        {/* Subtle dark scrim at the bottom so the button is legible */}
         <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/70 via-transparent to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 flex items-end justify-center pb-8">
           <motion.div
@@ -327,17 +331,17 @@ export default function HomePage() {
             >
               <div className="absolute -inset-4 bg-brand-red/5 rounded-2xl -z-10" />
               <img
-                src="/assets/uploads/089photoshootings-people-1979261_1920-5.jpg"
+                src={teamMeetingImg}
                 alt="Business team meeting"
                 className="w-full h-80 lg:h-96 object-cover rounded-xl shadow-navy col-span-2"
               />
               <img
-                src="/assets/uploads/tumisu-expert-5442081_1920-3.jpg"
+                src={itExpertImg}
                 alt="IT expert at work"
                 className="w-full h-36 object-cover rounded-xl shadow-card"
               />
               <img
-                src="/assets/uploads/ChatGPT-Image-Mar-6-2026-02_50_25-PM-6.png"
+                src={techProsImg}
                 alt="Technology professionals"
                 className="w-full h-36 object-cover rounded-xl shadow-card"
               />

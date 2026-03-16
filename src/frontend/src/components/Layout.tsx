@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Services", to: "/services" },
   { label: "Products", to: "/products" },
   { label: "Careers", to: "/careers" },
+  { label: "Why Us", to: "/why-us" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -35,7 +36,7 @@ export default function Layout() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      {/* ── Header ──────────────────────────────────────────────────────── */}
+      {/* ── Header ──────────────────────────────────────────────── */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
@@ -72,7 +73,7 @@ export default function Layout() {
                 <Link
                   key={link.to}
                   to={link.to}
-                  data-ocid={`nav.${link.label.toLowerCase()}.link`}
+                  data-ocid={`nav.${link.label.toLowerCase().replace(" ", "-")}.link`}
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 font-display ${
                     isActive(link.to)
                       ? "text-brand-red bg-brand-red/10"
@@ -120,7 +121,7 @@ export default function Layout() {
                   <Link
                     key={link.to}
                     to={link.to}
-                    data-ocid={`nav.mobile.${link.label.toLowerCase()}.link`}
+                    data-ocid={`nav.mobile.${link.label.toLowerCase().replace(" ", "-")}.link`}
                     className={`flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium font-display transition-colors ${
                       isActive(link.to)
                         ? "text-brand-red bg-brand-red/10"
@@ -146,12 +147,12 @@ export default function Layout() {
         </AnimatePresence>
       </header>
 
-      {/* ── Page Content ─────────────────────────────────────────────────── */}
+      {/* ── Page Content ──────────────────────────────────────────── */}
       <main className="flex-1 pt-16 lg:pt-20">
         <Outlet />
       </main>
 
-      {/* ── Footer ──────────────────────────────────────────────────────── */}
+      {/* ── Footer ───────────────────────────────────────────────── */}
       <footer className="bg-brand-navy text-white">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 py-12 lg:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
@@ -203,7 +204,7 @@ export default function Layout() {
                   <li key={link.to}>
                     <Link
                       to={link.to}
-                      data-ocid={`footer.${link.label.toLowerCase()}.link`}
+                      data-ocid={`footer.${link.label.toLowerCase().replace(" ", "-")}.link`}
                       className="text-sm text-white/70 hover:text-brand-gold transition-colors"
                     >
                       {link.label}

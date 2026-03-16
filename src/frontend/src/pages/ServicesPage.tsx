@@ -5,7 +5,6 @@ import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   Briefcase,
-  Building2,
   CheckCircle2,
   Clock,
   Network,
@@ -13,6 +12,14 @@ import {
   Users,
 } from "lucide-react";
 import { type Variants, motion } from "motion/react";
+import accentureLogo from "/assets/generated/client-accenture-transparent.dim_200x100.png";
+import ciscoLogo from "/assets/generated/client-cisco-transparent.dim_200x100.png";
+import deloitteLogo from "/assets/generated/client-deloitte-transparent.dim_200x100.png";
+import ibmLogo from "/assets/generated/client-ibm-transparent.dim_200x100.png";
+import infosysLogo from "/assets/generated/client-infosys-transparent.dim_200x100.png";
+import microsoftLogo from "/assets/generated/client-microsoft-transparent.dim_200x100.png";
+import oracleLogo from "/assets/generated/client-oracle-transparent.dim_200x100.png";
+import sapLogo from "/assets/generated/client-sap-transparent.dim_200x100.png";
 
 const services = [
   {
@@ -83,14 +90,14 @@ const services = [
 ];
 
 const clients = [
-  { name: "Microsoft", sector: "Technology" },
-  { name: "IBM", sector: "Enterprise IT" },
-  { name: "Deloitte", sector: "Consulting" },
-  { name: "Accenture", sector: "Professional Services" },
-  { name: "Oracle", sector: "Cloud & Database" },
-  { name: "Cisco", sector: "Networking" },
-  { name: "SAP", sector: "Enterprise Software" },
-  { name: "Infosys", sector: "IT Services" },
+  { name: "Microsoft", sector: "Technology", logo: microsoftLogo },
+  { name: "IBM", sector: "Enterprise IT", logo: ibmLogo },
+  { name: "Deloitte", sector: "Consulting", logo: deloitteLogo },
+  { name: "Accenture", sector: "Professional Services", logo: accentureLogo },
+  { name: "Oracle", sector: "Cloud & Database", logo: oracleLogo },
+  { name: "Cisco", sector: "Networking", logo: ciscoLogo },
+  { name: "SAP", sector: "Enterprise Software", logo: sapLogo },
+  { name: "Infosys", sector: "IT Services", logo: infosysLogo },
 ];
 
 const containerVariants: Variants = {
@@ -283,10 +290,11 @@ export default function ServicesPage() {
               >
                 <Card className="group h-full border border-gray-100 shadow-sm hover:shadow-md hover:border-brand-red/30 transition-all duration-300 hover:-translate-y-1 bg-white">
                   <CardContent className="p-6 flex flex-col items-center text-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-brand-navy/5 group-hover:bg-brand-red/10 flex items-center justify-center transition-colors duration-300">
-                      <Building2
-                        size={22}
-                        className="text-brand-navy group-hover:text-brand-red transition-colors duration-300"
+                    <div className="h-14 flex items-center justify-center">
+                      <img
+                        src={client.logo}
+                        alt={client.name}
+                        className="max-h-12 max-w-full object-contain"
                       />
                     </div>
                     <div>

@@ -9,6 +9,7 @@ import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage";
 import ServicesPage from "./pages/ServicesPage";
+import WhyUsPage from "./pages/WhyUsPage";
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -61,6 +62,12 @@ const contactRoute = createRoute({
   component: ContactPage,
 });
 
+const whyUsRoute = createRoute({
+  getParentRoute: () => layoutRoute,
+  path: "/why-us",
+  component: WhyUsPage,
+});
+
 const adminRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/admin",
@@ -75,6 +82,7 @@ const routeTree = rootRoute.addChildren([
     productsRoute,
     careersRoute,
     contactRoute,
+    whyUsRoute,
   ]),
   adminRoute,
 ]);
