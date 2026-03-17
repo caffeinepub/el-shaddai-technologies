@@ -11,6 +11,14 @@ import {
 } from "lucide-react";
 import { type Variants, motion } from "motion/react";
 
+const heroBg = "/assets/uploads/image-6-2.png";
+const hiringBanner = "/assets/uploads/tumisu-hiring-3580378_1920-4.png";
+const teamMeeting =
+  "/assets/uploads/089photoshootings-people-1979261_1920-5.jpg";
+const itExpert = "/assets/uploads/tumisu-expert-5442081_1920-3.jpg";
+const techProfessionals =
+  "/assets/uploads/ChatGPT-Image-Mar-6-2026-02_50_25-PM-1-2.png";
+
 const services = [
   {
     icon: Users,
@@ -63,14 +71,13 @@ export default function HomePage() {
         data-ocid="home.hero.section"
       >
         <img
-          src="/assets/uploads/image-6-2.png"
+          src={heroBg}
           alt="EL-Shaddai Technologies hero background"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        {/* Single strong solid overlay — fully suppresses any baked-in image text */}
         <div
           className="absolute inset-0"
-          style={{ backgroundColor: "rgba(2,14,38,0.88)" }}
+          style={{ backgroundColor: "rgba(2,14,38,0.82)" }}
         />
         <div className="relative z-10 w-full container max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-24">
           <motion.div
@@ -236,7 +243,7 @@ export default function HomePage() {
       {/* ── Hiring Banner ──────────────────────────────────────────────────────────────── */}
       <div className="relative w-full overflow-hidden h-56 lg:h-72">
         <img
-          src="/assets/uploads/tumisu-hiring-3580378_1920-4.png"
+          src={hiringBanner}
           alt="We are hiring"
           className="w-full h-full object-cover object-center"
         />
@@ -316,29 +323,32 @@ export default function HomePage() {
               </div>
             </motion.div>
 
+            {/* 3-image equal grid */}
             <motion.div
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative grid grid-cols-2 gap-3"
+              className="grid grid-cols-1 gap-4"
             >
-              <div className="absolute -inset-4 bg-brand-red/5 rounded-2xl -z-10" />
-              <img
-                src="/assets/uploads/089photoshootings-people-1979261_1920-5.jpg"
-                alt="Business team meeting"
-                className="w-full h-80 lg:h-96 object-cover rounded-xl shadow-navy col-span-2"
-              />
-              <img
-                src="/assets/uploads/tumisu-expert-5442081_1920-3.jpg"
-                alt="IT expert at work"
-                className="w-full h-36 object-cover rounded-xl shadow-card"
-              />
-              <img
-                src="/assets/uploads/ChatGPT-Image-Mar-6-2026-02_50_25-PM-6.png"
-                alt="Technology professionals"
-                className="w-full h-36 object-cover rounded-xl shadow-card"
-              />
+              {[
+                { src: teamMeeting, alt: "Business team meeting" },
+                { src: itExpert, alt: "IT expert at work" },
+                { src: techProfessionals, alt: "Technology professionals" },
+              ].map((img) => (
+                <div
+                  key={img.alt}
+                  className="relative overflow-hidden rounded-xl shadow-card"
+                  style={{ aspectRatio: "16/7" }}
+                >
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    loading="eager"
+                  />
+                </div>
+              ))}
             </motion.div>
           </div>
         </div>

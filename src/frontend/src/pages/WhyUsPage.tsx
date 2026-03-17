@@ -3,6 +3,13 @@ import { Link } from "@tanstack/react-router";
 import { Award, BadgeCheck, Briefcase, MapPin, Users, Zap } from "lucide-react";
 import { motion } from "motion/react";
 
+// High-quality images from uploads
+const teamMeeting =
+  "/assets/uploads/089photoshootings-people-1979261_1920-5.jpg";
+const itExpert = "/assets/uploads/tumisu-expert-5442081_1920-3.jpg";
+const techProfessionals =
+  "/assets/uploads/ChatGPT-Image-Mar-6-2026-02_50_25-PM-1-2.png";
+
 const reasons = [
   {
     icon: BadgeCheck,
@@ -116,17 +123,17 @@ export default function WhyUsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                src: "/assets/uploads/089photoshootings-people-1979261_1920-5.jpg",
+                src: teamMeeting,
                 alt: "EL-Shaddai team collaborating in a business meeting",
                 caption: "Collaborative Team Culture",
               },
               {
-                src: "/assets/uploads/tumisu-expert-5442081_1920-3.jpg",
+                src: itExpert,
                 alt: "IT expert at work",
                 caption: "Expert Talent Network",
               },
               {
-                src: "/assets/uploads/ChatGPT-Image-Mar-6-2026-02_50_25-PM-6.png",
+                src: techProfessionals,
                 alt: "Technology professionals",
                 caption: "Technology Professionals",
               },
@@ -139,11 +146,13 @@ export default function WhyUsPage() {
                 viewport={{ once: true }}
                 variants={fadeUp}
                 className="group relative overflow-hidden rounded-2xl shadow-card"
+                style={{ aspectRatio: "4/3" }}
               >
                 <img
                   src={img.src}
                   alt={img.alt}
-                  className="w-full h-64 md:h-72 lg:h-80 object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5">

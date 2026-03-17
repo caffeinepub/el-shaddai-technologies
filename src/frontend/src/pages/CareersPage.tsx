@@ -1,3 +1,6 @@
+import hiringBg from "@/assets/hiring-banner.png";
+import itExpert from "@/assets/it-expert.jpg";
+import weAreHiringBanner from "@/assets/we-are-hiring.jpg";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -15,7 +18,6 @@ import {
   Users,
 } from "lucide-react";
 import { type Variants, motion } from "motion/react";
-import weAreHiringBanner from "/assets/generated/we-are-hiring-banner.dim_1200x500.jpg";
 import { JobType, useActiveJobListings } from "../hooks/useQueries";
 
 const perks = [
@@ -92,7 +94,7 @@ export default function CareersPage() {
         data-ocid="careers.hero.section"
       >
         <img
-          src="/assets/uploads/tumisu-hiring-3580378_1920-4.png"
+          src={hiringBg}
           alt="Careers at EL-Shaddai Technologies Inc"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
@@ -231,7 +233,7 @@ export default function CareersPage() {
             >
               <div className="absolute -inset-4 bg-brand-navy/5 rounded-2xl -z-10" />
               <img
-                src="/assets/uploads/tumisu-expert-5442081_1920-3.jpg"
+                src={itExpert}
                 alt="Talent expert reviewing candidates"
                 className="w-full h-80 lg:h-96 object-cover rounded-xl shadow-navy"
               />
@@ -265,7 +267,6 @@ export default function CareersPage() {
             </p>
           </motion.div>
 
-          {/* Loading */}
           {isLoading && (
             <div className="space-y-4" data-ocid="careers.loading_state">
               {Array.from({ length: 3 }).map((_, i) => (
@@ -286,7 +287,6 @@ export default function CareersPage() {
             </div>
           )}
 
-          {/* Error */}
           {isError && (
             <div className="text-center py-12" data-ocid="careers.error_state">
               <p className="text-destructive font-medium">
@@ -295,7 +295,6 @@ export default function CareersPage() {
             </div>
           )}
 
-          {/* Empty state */}
           {!isLoading && !isError && (!jobs || jobs.length === 0) && (
             <div
               className="text-center py-20 bg-white rounded-2xl shadow-card"
@@ -319,7 +318,6 @@ export default function CareersPage() {
             </div>
           )}
 
-          {/* Job listings */}
           {!isLoading && jobs && jobs.length > 0 && (
             <motion.div
               variants={containerVariants}
