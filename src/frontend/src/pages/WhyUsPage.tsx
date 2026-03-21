@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 // High-quality images from uploads
 const teamMeeting =
-  "/assets/uploads/089photoshootings-people-1979261_1920-5.jpg";
+  "/assets/uploads/089photoshootings-people-1979261_1920-1-1.jpg";
 const itExpert = "/assets/uploads/tumisu-expert-5442081_1920-3.jpg";
 const techProfessionals =
   "/assets/uploads/ChatGPT-Image-Mar-6-2026-02_50_25-PM-1-2.png";
