@@ -3,12 +3,9 @@ import { Link } from "@tanstack/react-router";
 import { Award, BadgeCheck, Briefcase, MapPin, Users, Zap } from "lucide-react";
 import { motion } from "motion/react";
 
-// High-quality images from uploads
 const teamMeeting =
   "/assets/uploads/089photoshootings-people-1979261_1920-1-1.jpg";
 const itExpert = "/assets/uploads/tumisu-expert-5442081_1920-3.jpg";
-const techProfessionals =
-  "/assets/uploads/ChatGPT-Image-Mar-6-2026-02_50_25-PM-1-2.png";
 
 const reasons = [
   {
@@ -120,7 +117,7 @@ export default function WhyUsPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {[
               {
                 src: teamMeeting,
@@ -131,11 +128,6 @@ export default function WhyUsPage() {
                 src: itExpert,
                 alt: "IT expert at work",
                 caption: "Expert Talent Network",
-              },
-              {
-                src: techProfessionals,
-                alt: "Technology professionals",
-                caption: "Technology Professionals",
               },
             ].map((img, i) => (
               <motion.div

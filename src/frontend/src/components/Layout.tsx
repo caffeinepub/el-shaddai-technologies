@@ -1,4 +1,3 @@
-import logoImg from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 import { Link, Outlet, useRouterState } from "@tanstack/react-router";
 import { ChevronRight, Mail, Menu, Phone, X } from "lucide-react";
@@ -53,11 +52,6 @@ export default function Layout() {
               className="flex items-center gap-3 shrink-0"
               data-ocid="nav.logo.link"
             >
-              <img
-                src={logoImg}
-                alt="EL-Shaddai Technologies Logo"
-                className="h-10 w-auto object-contain"
-              />
               <span className="font-display font-bold text-brand-navy text-base lg:text-lg leading-tight">
                 EL-Shaddai
                 <br className="hidden sm:block" />{" "}
@@ -160,11 +154,6 @@ export default function Layout() {
             {/* Brand */}
             <div className="lg:col-span-2">
               <div className="flex items-center gap-3 mb-4">
-                <img
-                  src={logoImg}
-                  alt="EL-Shaddai Technologies Logo"
-                  className="h-12 w-auto object-contain"
-                />
                 <span className="font-display font-bold text-white text-lg leading-tight">
                   EL-Shaddai
                   <br />

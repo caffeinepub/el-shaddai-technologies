@@ -11,13 +11,11 @@ import {
 } from "lucide-react";
 import { type Variants, motion } from "motion/react";
 
-const heroBg = "/assets/uploads/image-6-2.png";
+const heroBg = "/assets/uploads/ChatGPT-Image-Mar-6-2026-02_50_25-PM-2-1.png";
 const hiringBanner = "/assets/uploads/tumisu-hiring-3580378_1920-4.png";
 const teamMeeting =
   "/assets/uploads/089photoshootings-people-1979261_1920-5.jpg";
 const itExpert = "/assets/uploads/tumisu-expert-5442081_1920-3.jpg";
-const techProfessionals =
-  "/assets/uploads/ChatGPT-Image-Mar-6-2026-02_50_25-PM-1-2.png";
 
 const services = [
   {
@@ -75,27 +73,30 @@ export default function HomePage() {
           alt="EL-Shaddai Technologies hero background"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
+        {/* Gradient overlay - stronger on left for text readability, lighter on right to show image */}
         <div
           className="absolute inset-0"
-          style={{ backgroundColor: "rgba(2,14,38,0.82)" }}
+          style={{
+            background:
+              "linear-gradient(to right, rgba(2,14,38,0.88) 0%, rgba(2,14,38,0.70) 50%, rgba(2,14,38,0.20) 100%)",
+          }}
         />
         <div className="relative z-10 w-full container max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-24">
           <motion.div
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="max-w-2xl"
+            className="max-w-xl"
           >
             <span className="inline-block text-xs font-display font-semibold uppercase tracking-widest text-brand-gold mb-4">
               Premier IT Staffing &amp; Workforce Solutions
             </span>
-            <h1 className="font-display text-4xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-              Building High-Performance IT Talent Pipelines
+            <h1 className="font-display text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+              EL-Shaddai Technologies Inc
             </h1>
             <p className="text-white/85 text-lg mb-8 leading-relaxed">
-              EL-Shaddai Technologies Inc connects America's top businesses with
-              exceptional technology professionals — fast, reliably, and with
-              care.
+              Connecting America's top businesses with exceptional technology
+              professionals — fast, reliably, and with care.
             </p>
             <div className="flex gap-3 flex-wrap">
               <Link to="/services" data-ocid="home.hero.learn_more.button">
@@ -323,7 +324,7 @@ export default function HomePage() {
               </div>
             </motion.div>
 
-            {/* 3-image equal grid */}
+            {/* 2-image grid */}
             <motion.div
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -334,7 +335,6 @@ export default function HomePage() {
               {[
                 { src: teamMeeting, alt: "Business team meeting" },
                 { src: itExpert, alt: "IT expert at work" },
-                { src: techProfessionals, alt: "Technology professionals" },
               ].map((img) => (
                 <div
                   key={img.alt}
