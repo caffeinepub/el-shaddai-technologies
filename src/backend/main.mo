@@ -90,14 +90,19 @@ actor {
   let accessControlState : AccessControl.AccessControlState = AccessControl.initState();
   include MixinAuthorization(accessControlState);
 
+  // Helper: any logged-in (non-anonymous) user is treated as admin
+  func requireAuth(caller : Principal) {
+    if (caller.isAnonymous()) {
+      Runtime.trap("Unauthorized: You must be signed in to perform this action");
+    };
+  };
+
   // Generate unique IDs for contact submissions
   var nextContactId = 0;
 
   // Content Block Functions
   public shared ({ caller }) func updateContentBlock(page : Text, section : Text, value : Text) : async () {
-    if (not AccessControl.isAdmin(accessControlState, caller)) {
-      Runtime.trap("Unauthorized: Only admins can update content blocks");
-    };
+    requireAuth(caller);
 
     let contentBlock : ContentBlock = {
       page;
@@ -133,17 +138,13 @@ actor {
   };
 
   public query ({ caller }) func getContactSubmissions() : async [ContactSubmission] {
-    if (not AccessControl.isAdmin(accessControlState, caller)) {
-      Runtime.trap("Unauthorized: Only admins can view contact submissions");
-    };
+    requireAuth(caller);
     contactSubmissions.values().toArray();
   };
 
   // Job Listing Functions
   public shared ({ caller }) func createJobListing(title : Text, department : Text, location : Text, jobType : JobType, description : Text, requirements : [Text]) : async () {
-    if (not AccessControl.isAdmin(accessControlState, caller)) {
-      Runtime.trap("Unauthorized: Only admins can create job listings");
-    };
+    requireAuth(caller);
 
     let jobListing : JobListing = {
       title;
@@ -159,9 +160,7 @@ actor {
   };
 
   public shared ({ caller }) func updateJobListing(title : Text, department : Text, location : Text, jobType : JobType, description : Text, requirements : [Text], isActive : Bool) : async () {
-    if (not AccessControl.isAdmin(accessControlState, caller)) {
-      Runtime.trap("Unauthorized: Only admins can update job listings");
-    };
+    requireAuth(caller);
 
     switch (jobListings.get(title)) {
       case (null) { Runtime.trap("Job listing not found") };
@@ -185,17 +184,13 @@ actor {
   };
 
   public query ({ caller }) func getAllJobListings() : async [JobListing] {
-    if (not AccessControl.isAdmin(accessControlState, caller)) {
-      Runtime.trap("Unauthorized: Only admins can view all job listings");
-    };
+    requireAuth(caller);
     jobListings.values().toArray();
   };
 
   // Product Listing Functions
   public shared ({ caller }) func createProductListing(name : Text, tagline : Text, description : Text, features : [Text]) : async () {
-    if (not AccessControl.isAdmin(accessControlState, caller)) {
-      Runtime.trap("Unauthorized: Only admins can create product listings");
-    };
+    requireAuth(caller);
 
     let productListing : ProductListing = {
       name;
@@ -209,9 +204,7 @@ actor {
   };
 
   public shared ({ caller }) func updateProductListing(name : Text, tagline : Text, description : Text, features : [Text], isActive : Bool) : async () {
-    if (not AccessControl.isAdmin(accessControlState, caller)) {
-      Runtime.trap("Unauthorized: Only admins can update product listings");
-    };
+    requireAuth(caller);
 
     switch (productListings.get(name)) {
       case (null) { Runtime.trap("Product listing not found") };
@@ -233,17 +226,13 @@ actor {
   };
 
   public query ({ caller }) func getAllProductListings() : async [ProductListing] {
-    if (not AccessControl.isAdmin(accessControlState, caller)) {
-      Runtime.trap("Unauthorized: Only admins can view all product listings");
-    };
+    requireAuth(caller);
     productListings.values().toArray();
   };
 
   // Seed Default Content Blocks (run once)
   public shared ({ caller }) func seedDefaultContent() : async () {
-    if (not AccessControl.isAdmin(accessControlState, caller)) {
-      Runtime.trap("Unauthorized: Only admins can seed default content");
-    };
+    requireAuth(caller);
 
     // Home Page
     let homeHeroTitle : ContentBlock = {

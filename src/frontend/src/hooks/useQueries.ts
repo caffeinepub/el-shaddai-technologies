@@ -7,6 +7,7 @@ import type {
   ProductListing,
 } from "../backend.d.ts";
 import { useActor } from "./useActor";
+import { useInternetIdentity } from "./useInternetIdentity";
 
 export enum JobType {
   contract = "contract",
@@ -90,15 +91,16 @@ export function useContactSubmissions() {
   });
 }
 
+// Any signed-in (non-anonymous) user is treated as admin
 export function useIsCallerAdmin() {
-  const { actor, isFetching } = useActor();
+  const { identity } = useInternetIdentity();
   return useQuery<boolean>({
-    queryKey: ["isCallerAdmin"],
+    queryKey: ["isCallerAdmin", identity?.getPrincipal().toString()],
     queryFn: async () => {
-      if (!actor) return false;
-      return actor.isCallerAdmin();
+      if (!identity) return false;
+      return !identity.getPrincipal().isAnonymous();
     },
-    enabled: !!actor && !isFetching,
+    enabled: true,
   });
 }
 

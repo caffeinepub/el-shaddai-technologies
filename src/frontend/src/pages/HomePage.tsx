@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { type Variants, motion } from "motion/react";
 
-const heroBg = "/assets/uploads/ChatGPT-Image-Mar-6-2026-02_50_25-PM-2-1.png";
+const heroBg = "/assets/generated/hero-bg-tech.dim_1920x1080.jpg";
 const hiringBanner = "/assets/uploads/tumisu-hiring-3580378_1920-4.png";
 const teamMeeting =
   "/assets/uploads/089photoshootings-people-1979261_1920-5.jpg";
@@ -73,12 +73,12 @@ export default function HomePage() {
           alt="EL-Shaddai Technologies hero background"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        {/* Gradient overlay - stronger on left for text readability, lighter on right to show image */}
+        {/* Strong uniform dark overlay for clear text readability */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to right, rgba(2,14,38,0.88) 0%, rgba(2,14,38,0.70) 50%, rgba(2,14,38,0.20) 100%)",
+              "linear-gradient(135deg, rgba(2,14,38,0.82) 0%, rgba(2,14,38,0.65) 60%, rgba(2,14,38,0.50) 100%)",
           }}
         />
         <div className="relative z-10 w-full container max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-24">
