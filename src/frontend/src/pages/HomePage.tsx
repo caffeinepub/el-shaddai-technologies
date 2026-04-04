@@ -16,6 +16,8 @@ const hiringBanner = "/assets/uploads/tumisu-hiring-3580378_1920-4.png";
 const teamMeeting =
   "/assets/uploads/089photoshootings-people-1979261_1920-5.jpg";
 const itExpert = "/assets/uploads/tumisu-expert-5442081_1920-3.jpg";
+const easterImage =
+  "/assets/generated/easter-sunday-elshaddai-linkedin.dim_1080x1080.png";
 
 const services = [
   {
@@ -63,6 +65,30 @@ const itemVariants: Variants = {
 export default function HomePage() {
   return (
     <div>
+      {/* ── Easter Download Section ────────────────────────────────────────────── */}
+      <section className="py-10 bg-purple-50 border-b border-purple-100">
+        <div className="container max-w-3xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="font-display text-2xl font-bold text-purple-900 mb-2">
+            Easter Resurrection Sunday Wishes
+          </h2>
+          <p className="text-purple-700 mb-6 text-sm">
+            Right-click the image below and select{" "}
+            <strong>"Save image as"</strong> to download it to your device.
+          </p>
+          <div className="inline-block rounded-2xl overflow-hidden shadow-xl border-4 border-purple-200">
+            <img
+              src={easterImage}
+              alt="Easter Resurrection Sunday - EL-Shaddai Technologies Inc"
+              className="w-full max-w-md mx-auto block"
+              loading="eager"
+            />
+          </div>
+          <p className="text-purple-600 text-xs mt-4">
+            He Is Risen! — EL-Shaddai Technologies Inc
+          </p>
+        </div>
+      </section>
+
       {/* ── Hero ────────────────────────────────────────────────────────────────── */}
       <section
         className="relative min-h-[85vh] flex items-center"
