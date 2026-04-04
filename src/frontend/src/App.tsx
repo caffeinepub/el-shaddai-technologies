@@ -1,6 +1,11 @@
 import { Toaster } from "@/components/ui/sonner";
 import { RouterProvider, createRouter } from "@tanstack/react-router";
-import { Outlet, createRootRoute, createRoute } from "@tanstack/react-router";
+import {
+  Navigate,
+  Outlet,
+  createRootRoute,
+  createRoute,
+} from "@tanstack/react-router";
 import Layout from "./components/Layout";
 import AboutPage from "./pages/AboutPage";
 import AdminPage from "./pages/AdminPage";
@@ -18,6 +23,7 @@ const rootRoute = createRootRoute({
       <Toaster richColors position="top-right" />
     </>
   ),
+  notFoundComponent: () => <Navigate to="/" />,
 });
 
 const layoutRoute = createRoute({
@@ -87,7 +93,10 @@ const routeTree = rootRoute.addChildren([
   adminRoute,
 ]);
 
-const router = createRouter({ routeTree });
+const router = createRouter({
+  routeTree,
+  defaultNotFoundComponent: () => <Navigate to="/" />,
+});
 
 declare module "@tanstack/react-router" {
   interface Register {
